@@ -2,11 +2,13 @@ from peewee import *  # pylint: disable=wildcard-import, unused-import, unused-w
 from datetime import datetime
 from models import *
 
+
 def create_db_tables():
     """Creates the database tables"""
     database.create_tables(
         [Person, Message, Diaper, DiaperContent, DiaperContentType, Bottle, BottleType]
     )
+
 
 def create_bottle_types():
     """Creates the needed bottle types"""
@@ -14,6 +16,7 @@ def create_bottle_types():
     breastmilk.save()
     formula = BottleType(name="formula")
     formula.save()
+
 
 def create_diaper_types():
     """Creates the needed diaper types"""
@@ -24,6 +27,7 @@ def create_diaper_types():
     mixed = DiaperContentType(name="mixed")
     mixed.save()
 
+
 def create_people():
     """Creates the people who will be texting"""
     mike = Person(name="Mike", phonenumber="+15103422234")
@@ -32,6 +36,7 @@ def create_people():
     jewel.save()
     karen = Person(name="Karen", phonenumber="+15102992674")
     karen.save()
+
 
 def create_values():
     """Creates needed values"""
